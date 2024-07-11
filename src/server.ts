@@ -3,7 +3,8 @@ import { env } from './env'
 
 app
   .listen({
-    port: env.PORT,
+    host: '0.0.0.0',
+    port: process.env.PORT ? Number(process.env.PORT) : env.PORT,
   })
   .then(() => {
     console.log('HTTP Server Running!')
